@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic Vue Js - HelloWorld App</title>
+
+  <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+  <!-- Using via Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- https://tailwindcss.com/docs/installation -->
+  <!-- Using Tailwind via CDN -->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@next"></script>
+
+</head>
+
+
+}
+</style>
+
+<body>
+  <div id="app">
+    <div class="h-screen bg-gray-300">
+      <div class="container flex justify-center py-20">
+        <div class="p-3 bg-white rounded-xl max-w-lg hover:shadow">
+          <div class="flex justify-between w-full"> <img
+              src="https://scontent.fbkk2-6.fna.fbcdn.net/v/t1.0-9/134730615_3626118044090781_5345320992294946255_n.jpg?_nc_cat=104&ccb=2&_nc_sid=09cbfe&_nc_eui2=AeGwW7xo4_nReJFl-DCkUcCcjmEbjREGUYWOYRuNEQZRhdpKQIUWOLevf32Y9e4Cva_ff2d_1vtPkWGNxaxIQCeO&_nc_ohc=iTx37Q-hXcgAX9IPQtF&_nc_ht=scontent.fbkk2-6.fna&oh=778dd612c9f4768f85d1287a330262d4&oe=603FBE84"
+              width="150" class="rounded-lg">
+            <div class="ml-2">
+              <div class="p-3">
+                <h3 class="text-2xl">guyjiraphat</h3> <span class="text-gray-400">Personal blog</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-gray-200 rounded-lg">
+                <div class="mr-3"> <span class="text-gray-400 block">Posts</span> <span
+                    class="font-bold text-black text-xl">20</span> </div>
+                <div class="mr-3"> <span class="text-gray-400 block">Followers</span> <span
+                    class="font-bold text-black text-xl">2.7M</span> </div>
+                <div> <span class="text-gray-400 block">Following</span> <span
+                    class="font-bold text-black text-xl">327</span> </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center items-center mt-2 gap-2 w-full">
+            <a href="https://www.instagram.com/guyjiraphat/" class="w-full">
+              <button
+                class="flex justify-center items-center h-9 w-full mt-2 rounded-md bg-blue-700 text-white text-md hover:shadow hover:bg-blue-800">Follow
+              </button>
+            </a>
+          </div>
+
+          <h1 class="text-xl tracking-wider mt-5 rounded-lg">Photo Gallery</h1>
+          <ul>
+            <li v-for="(task,index) in tasks" class="py-3.5">
+              <img v-bind:src="task.image" alt="task.title" class="h-48 py-3 " v-on:click="toggleDone(index)">
+              <span class="text-gray-700 font-semibold text-sm">{{task.title}} </span>
+              <span v-show="task.done" class="material-icons">favorite_border</span>
+              <!-- <button v-on:click="toggleDone(index)" class="bg-green-500 text-white  py-1 px-2 rounded">
+          Done
+        </button> -->
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- my main.js -->
+  <script src="main.js"></script>
+</body>
+
+</html>
