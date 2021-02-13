@@ -20,15 +20,11 @@
 
 </head>
 
-
-}
-</style>
-
 <body>
-  <div id="app">
-    <div class="h-screen bg-gray-300">
+  <div id="app" >
+    <div class="h-full bg-blue-100">
       <div class="container flex justify-center py-20">
-        <div class="p-3 bg-white rounded-xl max-w-lg hover:shadow">
+        <div class="p-3 w-auto bg-white rounded-xl max-w-lg hover:shadow">
           <div class="flex justify-between w-full"> <img
               src="https://scontent.fbkk2-6.fna.fbcdn.net/v/t1.0-9/134730615_3626118044090781_5345320992294946255_n.jpg?_nc_cat=104&ccb=2&_nc_sid=09cbfe&_nc_eui2=AeGwW7xo4_nReJFl-DCkUcCcjmEbjREGUYWOYRuNEQZRhdpKQIUWOLevf32Y9e4Cva_ff2d_1vtPkWGNxaxIQCeO&_nc_ohc=iTx37Q-hXcgAX9IPQtF&_nc_ht=scontent.fbkk2-6.fna&oh=778dd612c9f4768f85d1287a330262d4&oe=603FBE84"
               width="150" class="rounded-lg">
@@ -38,7 +34,7 @@
               </div>
               <div class="flex justify-between items-center p-3 bg-gray-200 rounded-lg">
                 <div class="mr-3"> <span class="text-gray-400 block">Posts</span> <span
-                    class="font-bold text-black text-xl">20</span> </div>
+                    class="font-bold text-black text-xl">3</span> </div>
                 <div class="mr-3"> <span class="text-gray-400 block">Followers</span> <span
                     class="font-bold text-black text-xl">2.7M</span> </div>
                 <div> <span class="text-gray-400 block">Following</span> <span
@@ -53,16 +49,15 @@
               </button>
             </a>
           </div>
-
-          <h1 class="text-xl tracking-wider mt-5 rounded-lg">Photo Gallery</h1>
-          <ul>
-            <li v-for="(task,index) in tasks" class="py-3.5">
-              <img v-bind:src="task.image" alt="task.title" class="h-48 py-3 " v-on:click="toggleDone(index)">
-              <span class="text-gray-700 font-semibold text-sm">{{task.title}} </span>
-              <span v-show="task.done" class="material-icons">favorite_border</span>
-              <!-- <button v-on:click="toggleDone(index)" class="bg-green-500 text-white  py-1 px-2 rounded">
-          Done
-        </button> -->
+<br>
+          <h1 class="text-xl tracking-wider mt-5 inline">Photo Gallery </h1> 
+          <h1 class="inline text-gray-400">Like ( {{ countdone }} ) </h1>
+          <ul class="rounded-lg">
+            <li v-for="(task,index) in tasks" class="py-3.5 space-x-6 items-center rounded-lg">
+              <div class="rounded-lg inline"><img v-bind:src="task.image" alt="task.title" class="h-48 py-3 inline " v-on:click="toggleDone(index)"></div>
+              
+              <span class="text-gray-700 font-semibold text-sm inline">{{task.title}} </span>
+              <span v-show="task.done" v-on:click="toggleDone(index)" class="material-icons text-red-500 align-middle">favorite</span>
             </li>
           </ul>
 
@@ -70,6 +65,8 @@
       </div>
     </div>
   </div>
+
+  
   <!-- my main.js -->
   <script src="main.js"></script>
 </body>

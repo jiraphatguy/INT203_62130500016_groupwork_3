@@ -12,5 +12,11 @@ const app = {
             this.tasks[index].done = !this.tasks[index].done
         }
     }
+,
+computed: {
+    countdone(){
+        return this.tasks.filter( t => t.done ).length
+    }
+}
 }
 Vue.createApp(app).mount('#app')
